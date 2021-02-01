@@ -13,6 +13,25 @@ Scaling up:
         "I want to listen to"
         While theoretically the possibilities are limitless, the actual usage of common idioms has a limited range. These can be captured through web scraping and surveys on social media.
 
-        
+
 Treebank models exist
 
+Aberdeen University developed a JSGF class that uses a "grammar graph" to display what the parts should look like. This was quite helpful. They used the following template:
+    public <basicCmd> = <startPolite> <command> <endPolite>;
+  
+        <command> = <action> <object>;
+        <action> = /10/ open |/2/ close |/1/ delete |/1/ move;
+        <object> = [the | a] (window | file | menu);
+  
+        <startPolite> = (please | kindly | could you | oh mighty computer) *;
+        <endPolite> = [ please | thanks | thank you ];
+
+I thought the "politeness" parameters were cute. Depending on culture, this would be part of the idiomatic phrases.
+
+The "command" is made up of the "action" to play, listen, turn on, etc.The "command" would be the java way of expressing wishes or desires. In this template, the actions are numbered, which may help later in shorthand for calling these functions.
+
+Aberdeen conceptualized the grammar in the following figures:
+
+<img src="https://www.dropbox.com/s/hbxc96c6uxdjdnh/abdn_gram_pic.png?dl=0"/>
+
+The object which we are defining in our particular application is the "music_item". 

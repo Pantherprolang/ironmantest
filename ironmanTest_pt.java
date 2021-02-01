@@ -1,46 +1,56 @@
-#JSGV V1.0 UTF-8 en;
+#JSGFGrammar V1.0 utf-8 pt-pt;
 
-grammar music_playEn;
+grammar music_play_pt;
 
-    music_play = 
-        music_playEn;
+public <music_play_pt> = 
+  
+    <startPolite_pt> <command_pt> <endPolite_pt>;
+        <command_pt> = <action_pt> <object_pt>;
 
-public <music_play> = 
-    [can you] (put on | play) (<artist>) | <song>);
+        <action_pt> =
+            /10/ (pode tocar | toque) |
+            /3/ (quero | estou a precisar) |
+            /2/ ([permite | deixa] ouvir | escutar) |
+            /1/ (para | cesse) ;
 
-<artist> =
-    beatles |
-    led zeppelin |
-    radio head |
-    pink floyd |
-    cake;
+        <object_pt> = 
+            <music_item_pt>;
 
-<song> =
-    comfortably numb |
-    paranoid android |
-    let it be |
-    hey jude |
-    no phone |
-    kashmir ;
+    <startPolite_pt> = (faz favor | da licença);
 
-<genre> =
-    jazz |
-    classic rock |
-    alternative;
+    <endPolite_pt> = ([não es ] nada | obrigado);
+
+<music_item_pt> =
+    artista |
+    canção |
+    género_musical |
+    álbum;
 
 
-<album> =
-    physical graffiti |
-    ummagumma |
-    hey jude |
-    ok computer |
-    pressure chief;
+    <artista> =
+        beatles |
+        led zeppelin |
+        radio head |
+        pink floyd |
+        cake;
 
-<unk> =
-    music |
-    let me hear |
-    i want to listen to |
-    play me |
-    can you |
-    put on |
-    by |
+    <canção> =
+        comfortably numb |
+        paranoid android |
+        let it be |
+        hey jude |
+        no phone |
+        kashmir ;
+
+    <género_musical> =
+        jazz |
+        música rock |
+        música alternativa;
+
+
+    <álbum> =
+        physical graffiti |
+        ummagumma |
+        hey jude |
+        ok computer |
+        pressure chief;
